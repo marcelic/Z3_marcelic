@@ -12,6 +12,11 @@ struct red{
        int front,rear;
        klijent *osobe[10000];
        };
+       
+int AddOne(int rear){
+    rear=(rear+1)%10000;
+    return rear;
+    }
 
 void EnQueueQ(red *element, klijent *osoba){
      int zadnja_pozicija=element->rear;
@@ -33,12 +38,7 @@ void InitQ(red *element){
      element->rear=9999;
      }
 
-bool IsEmpty(red *element){
+bool IsEmptyQ(red *element){
      if(AdOne(element->rear)==element->front)return true;
      else return false;
      }
-     
-int AddOne(int rear){
-    rear=(rear+1)%10000;
-    return rear;
-    }
